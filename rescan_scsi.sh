@@ -4,7 +4,7 @@ echo "Rescan scsi bus withuot reboot"
 
 rescan-scsi-bus.sh -a ; ERROR_SCAN=$?
 
-if [ $ERROR_SCAN -eq 127 ]
+if [ $ERROR_SCAN -ne 0 ]
 then
 	for i in $(ls /sys/class/scsi_host)
 	do
